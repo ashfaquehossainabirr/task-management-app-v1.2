@@ -48,7 +48,12 @@ export default function AdminDashboard() {
 
 
       {/* Task List */}
-      {tasks.map((task) => (
+      { tasks.length === 0 ? (
+              <div className="no-task-box">
+                <h3>📭 No assigned tasks</h3>
+                <p>Please wait until admin assigns you a task.</p>
+              </div>
+            ) : tasks.map((task) => (
         <TaskCard key={task.id} task={task} />
       ))}
     </div>
